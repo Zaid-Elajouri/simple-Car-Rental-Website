@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Registration.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <title>Registration</title>
+    
+        
+</head>
+<body>
+  
+  <div class="container_form">
+    <div class="image-contain"><img src="Khaby-registration.jpg"></div>
+    <input id="id" type="text" placeholder="Enter ID">
+    <input id="name" type="text" placeholder="Enter your Name">
+    <input id="Email" type="text" placeholder="Enter your Email">
+    <select name="cars" id="cars">
+      <option value="JEEP">JEEP</option>
+      <option value="AUDI">AUDI</option>
+      <option value="CLIO4">CLIO4</option>
+    </select>
+    <button id="submit">Submit/Update</button>
+    
+    
+  </div>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+   
+    <script type="module">
+       // Add Your web app's Firebase configuration
+      
+      
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const app = initializeApp(firebaseConfig);
+        var id, name, Email,cars;
+
+       //Javascript code to Get input from the user
+  function getdata(){
+      id = document.getElementById('id').value;
+      name = document.getElementById('name').value;
+      Email = document.getElementById('Email').value;
+      cars = document.getElementById('cars').value;
+  }
+  
+       //Send the data entered by the user to firebase database
+  document.getElementById('submit').onclick = function(){
+    getdata();
+    firebase.database().ref(id).set({
+        Name: name,
+        Email: Email,
+        Car:cars,
+    })
+  }
+
+      </script>
+      
+      
+
+      </body>
+      </html>
