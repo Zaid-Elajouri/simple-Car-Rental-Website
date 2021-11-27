@@ -6,7 +6,7 @@ Database: Using Firebase.
 
 
 
-                                                                      #HOME PAGE
+                                                                 #HOME PAGE
                                                                       
                                                                       
 
@@ -16,7 +16,7 @@ Database: Using Firebase.
 
 
 
-                                                                 #RESERVING_FORM PAGE
+                                                              #RESERVING_FORM PAGE
                                                                  
                                                                  
 
